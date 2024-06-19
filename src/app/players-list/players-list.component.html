@@ -1,0 +1,54 @@
+<h1 title="Team">Team: {{ teamName }}</h1>
+
+<div class="input">
+  <mat-form-field>
+    <input
+      placeholder="Enter new player name here"
+      matInput
+      type="text"
+      [(ngModel)]="name"
+      (keydown)="handleKey($event)"
+    />
+  </mat-form-field>
+</div>
+
+<div class="flex" style="justify-content: space-between;">
+  <h4>Team Members:</h4>
+  <span style="margin-right: 10px;"># <span style="text-decoration: underline;">{{ membersCount }}</span></span>
+</div>
+
+<mat-list>
+  <div *ngIf="data?.length === 0" class="empty-list-label">Empty list</div>
+  <mat-divider *ngIf="data?.length !== 0"></mat-divider>
+  <ng-content *ngFor="let item of data">
+    <mat-list-item>
+      <div class="flex list-item">
+        <p title="Name">
+          {{ item.name }}
+        </p>
+        <div class="flex right">
+          <mat-chip-set>
+            <mat-chip
+              title="Score"
+              class="mat-chip mat-primary mat-chip-selected"
+              color="primary"
+              selected="true"
+            >
+              <!-- {{ item.points }} -->
+              {{ calculate(item.points) }}
+            </mat-chip>
+          </mat-chip-set>
+          <button
+            mat-icon-button
+            aria-label="Delete Element"
+            aria-hidden="true"
+            (click)="remove.emit(item)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </ng-content>
+</mat-list>

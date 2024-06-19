@@ -1,0 +1,14 @@
+<div class="layout">
+  <app-players-list
+    [data]="team1"
+    [teamName]="'jó nap'"
+    (add)="add(team1, $event)"
+    (remove)="remove(team1, $event)"
+  ></app-players-list>
+  <app-players-list
+    [data]="team2"
+    [teamName]="'jobb éjszakát'"
+    (add)="add(team2, $event)"
+    (remove)="remove(team2, $event)"
+  ></app-players-list>
+</div>

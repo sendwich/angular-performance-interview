@@ -1,0 +1,41 @@
+:host {
+  border: 1px solid black;
+  display: block;
+  margin: 10px;
+}
+
+h1, h4 {
+  margin-left: 10px;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.list-item {
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.right {
+  gap: 10px;
+}
+
+.input {
+  padding: 10px;
+  width: auto;
+  > * {
+    width: 100%;
+  }
+}
