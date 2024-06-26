@@ -4,7 +4,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output
+  Output,
+  WritableSignal
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -37,7 +38,7 @@ import { FibonacciPipe } from '../pipe/fibonacci.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayersListComponent {
-  @Input() data: PlayerData[] | null = null;
+  @Input() data!: WritableSignal<PlayerData[]>;
   @Input() teamName: string | null = null;
 
   name: string = '';

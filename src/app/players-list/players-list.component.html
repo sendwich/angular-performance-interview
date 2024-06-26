@@ -19,15 +19,15 @@
         style="text-decoration: underline;" 
         title="Total Members" 
         aria-label="Total Members">
-      {{ data?.length ?? 0 }}
+      {{ data().length }}
     </span>
   </span>
 </div>
 
 <mat-list>
-  <div *ngIf="data?.length === 0" class="empty-list-label">Empty list</div>
-  <mat-divider *ngIf="data?.length !== 0"></mat-divider>
-  <ng-content *ngFor="let item of data">
+  <div *ngIf="data().length === 0" class="empty-list-label">Empty list</div>
+  <mat-divider *ngIf="data().length !== 0"></mat-divider>
+  <ng-content *ngFor="let item of data()">
     <mat-list-item>
       <div class="flex list-item">
         <p title="Name" aria-label="Name">
