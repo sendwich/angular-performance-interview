@@ -27,7 +27,7 @@
 <mat-list>
   <div *ngIf="data().length === 0" class="empty-list-label">Empty list</div>
   <mat-divider *ngIf="data().length !== 0"></mat-divider>
-  <ng-content *ngFor="let item of data()">
+  <ng-content *ngFor="let item of data(); index as i">
     <mat-list-item>
       <div class="flex list-item">
         <p title="Name" aria-label="Name">
@@ -49,7 +49,7 @@
             mat-icon-button
             title="Delete Element"
             aria-label="Delete Element"
-            (click)="remove.emit(item)"
+            (click)="onRemoveClick(i)"
           >
             <mat-icon>delete</mat-icon>
           </button>

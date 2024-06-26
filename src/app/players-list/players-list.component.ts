@@ -43,15 +43,23 @@ export class PlayersListComponent {
 
   name: string = '';
 
-  @Output() remove = new EventEmitter<PlayerData>();
+  @Output() remove = new EventEmitter<number>();
   @Output() add = new EventEmitter<string>();
 
   onEnterKeydown() {
     this.addPlayer();
   }
 
+  onRemoveClick(index: number) {
+    this.removePlayer(index);
+  }
+
   private addPlayer() {
     this.add.emit(this.name);
     this.name = '';
+  }
+
+  private removePlayer(index: number) {
+    this.remove.emit(index)
   }
 }

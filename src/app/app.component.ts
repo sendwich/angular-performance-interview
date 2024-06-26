@@ -22,7 +22,7 @@ export class AppComponent {
     team.set([{ name: $event, points: 29 }, ...team()]);
   }
 
-  remove(team: WritableSignal<PlayerData[]>, $event: PlayerData) {
-    team.set([...team().filter(player => player.name !== $event.name)]);
+  remove(team: WritableSignal<PlayerData[]>, $event: number) {
+    team.set([...team().filter((_,i) => i !== $event)]);
   }
 }
