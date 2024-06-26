@@ -51,10 +51,12 @@ export class PlayersListComponent implements OnChanges {
     this.membersCount = this.data?.length ?? 0;
   }
 
-  handleKey(event: KeyboardEvent) {
-    if (event.keyCode === 13) {
-      this.add.emit(this.name);
-      this.name = '';
-    }
+  onEnterKeydown() {
+    this.addPlayer();
+  }
+
+  private addPlayer() {
+    this.add.emit(this.name);
+    this.name = '';
   }
 }

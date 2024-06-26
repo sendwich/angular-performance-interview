@@ -7,7 +7,7 @@
       matInput
       type="text"
       [(ngModel)]="name"
-      (keydown)="handleKey($event)"
+      (keydown.enter)="onEnterKeydown()"
     />
   </mat-form-field>
 </div>
