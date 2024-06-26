@@ -34,8 +34,7 @@
               color="primary"
               selected="true"
             >
-              <!-- {{ item.points }} -->
-              {{ calculate(item.points) }}
+              {{ item.points | fibonacci }}
             </mat-chip>
           </mat-chip-set>
           <button
