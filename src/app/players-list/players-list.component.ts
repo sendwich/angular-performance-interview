@@ -34,7 +34,7 @@ import { FibonacciPipe } from '../pipe/fibonacci.pipe';
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayersListComponent {
   @Input() data: PlayerData[] | null = null;
