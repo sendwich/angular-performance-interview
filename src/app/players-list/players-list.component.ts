@@ -4,7 +4,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   Output
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -37,19 +36,14 @@ import { FibonacciPipe } from '../pipe/fibonacci.pipe';
   styleUrl: './players-list.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class PlayersListComponent implements OnChanges {
+export class PlayersListComponent {
   @Input() data: PlayerData[] | null = null;
   @Input() teamName: string | null = null;
 
   name: string = '';
-  membersCount: number = 0;
 
   @Output() remove = new EventEmitter<PlayerData>();
   @Output() add = new EventEmitter<string>();
-
-  ngOnChanges(): void {
-    this.membersCount = this.data?.length ?? 0;
-  }
 
   onEnterKeydown() {
     this.addPlayer();
