@@ -12,28 +12,28 @@
   </mat-form-field>
 </div>
 
-<div class="flex" style="justify-content: space-between;">
+<div class="flex">
   <h4>Team Members:</h4>
-  <span style="margin-right: 10px;">
+  <span class="total-members">
     # <span 
-        style="text-decoration: underline;" 
+        class="total-members__count"
         title="Total Members" 
         aria-label="Total Members">
-      {{ data().length }}
-    </span>
+        {{ data().length }}
+      </span>
   </span>
 </div>
 
 <mat-list>
-  <div *ngIf="data().length === 0" class="empty-list-label">Empty list</div>
+  <div *ngIf="data().length === 0">Empty list</div>
   <mat-divider *ngIf="data().length !== 0"></mat-divider>
   <ng-content *ngFor="let item of data(); index as i; trackBy: trackByFn">
     <mat-list-item>
-      <div class="flex list-item">
+      <div class="flex">
         <p title="Name" aria-label="Name">
           {{ item.name }}
         </p>
-        <div class="flex right">
+        <div class="flex">
           <mat-chip-set>
             <mat-chip
               title="Score"

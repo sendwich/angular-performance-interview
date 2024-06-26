@@ -4,37 +4,23 @@
   margin: 10px;
 }
 
-h1, h4 {
-  margin-left: 10px;
-}
-
-h4 {
-  margin-bottom: 0;
-}
-
-p {
-  margin: 0;
-}
-
 .flex {
   display: flex;
   gap: 10px;
   align-items: center;
-}
-
-.list-item {
   justify-content: space-between;
-  width: 100%;
-  align-items: center;
 }
 
-.right {
-  gap: 10px;
+.total-members {
+  white-space: nowrap;
+  margin-right: 10px;
+  &__count {
+    text-decoration: underline;
+  }
 }
 
 .input {
   padding: 10px;
-  width: auto;
   > * {
     width: 100%;
   }
