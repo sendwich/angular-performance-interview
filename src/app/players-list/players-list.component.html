@@ -27,7 +27,7 @@
 <mat-list>
   <div *ngIf="data().length === 0" class="empty-list-label">Empty list</div>
   <mat-divider *ngIf="data().length !== 0"></mat-divider>
-  <ng-content *ngFor="let item of data(); index as i">
+  <ng-content *ngFor="let item of data(); index as i; trackBy: trackByFn">
     <mat-list-item>
       <div class="flex list-item">
         <p title="Name" aria-label="Name">

@@ -54,6 +54,10 @@ export class PlayersListComponent {
     this.removePlayer(index);
   }
 
+  trackByFn(index: number) {
+    return index;
+  }
+
   private addPlayer() {
     this.add.emit(this.name);
     this.name = '';
