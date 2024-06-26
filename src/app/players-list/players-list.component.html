@@ -14,7 +14,14 @@
 
 <div class="flex" style="justify-content: space-between;">
   <h4>Team Members:</h4>
-  <span style="margin-right: 10px;"># <span style="text-decoration: underline;">{{ data?.length ?? 0 }}</span></span>
+  <span style="margin-right: 10px;">
+    # <span 
+        style="text-decoration: underline;" 
+        title="Total Members" 
+        aria-label="Total Members">
+      {{ data?.length ?? 0 }}
+    </span>
+  </span>
 </div>
 
 <mat-list>
@@ -23,7 +30,7 @@
   <ng-content *ngFor="let item of data">
     <mat-list-item>
       <div class="flex list-item">
-        <p title="Name">
+        <p title="Name" aria-label="Name">
           {{ item.name }}
         </p>
         <div class="flex right">
@@ -33,14 +40,15 @@
               class="mat-chip mat-primary mat-chip-selected"
               color="primary"
               selected="true"
+              aria-label="Score"
             >
               {{ item.points | fibonacci }}
             </mat-chip>
           </mat-chip-set>
           <button
             mat-icon-button
+            title="Delete Element"
             aria-label="Delete Element"
-            aria-hidden="true"
             (click)="remove.emit(item)"
           >
             <mat-icon>delete</mat-icon>
