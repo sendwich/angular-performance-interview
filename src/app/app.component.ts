@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import { PLAYERS1, PLAYERS2, PlayerData } from './data/MOCK_DATA';
+import { PLAYERS1, PLAYERS2 } from './data/MOCK_DATA';
 import { PlayersListComponent } from './players-list/players-list.component';
+import { PlayerData } from './model/player-data';
 
 @Component({
   selector: 'app-root',

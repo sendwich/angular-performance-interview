@@ -1,9 +1,6 @@
-export type PlayerData = {
-  name: string;
-  points: number;
-};
+import { PlayerData } from "../model/player-data";
 
-export const PLAYERS1 = [
+export const PLAYERS1: PlayerData[] = [
   { name: 'Prince', points: 30 },
   { name: 'Rora', points: 28 },
   { name: 'Guthry', points: 26 },
@@ -106,7 +103,7 @@ export const PLAYERS1 = [
   { name: 'Serene', points: 30 },
 ];
 
-export const PLAYERS2 = [
+export const PLAYERS2: PlayerData[] = [
   { name: 'Hubert', points: 27 },
   { name: 'Josias', points: 30 },
   { name: 'Alexine', points: 30 },

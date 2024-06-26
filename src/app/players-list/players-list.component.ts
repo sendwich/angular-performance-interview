@@ -14,10 +14,10 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import { PlayerData } from '../data/MOCK_DATA';
 import { fibonacci } from '../util/math';
 
 import { MatDividerModule } from '@angular/material/divider';
+import { PlayerData } from '../model/player-data';
 @Component({
   selector: 'app-players-list',
   standalone: true,
